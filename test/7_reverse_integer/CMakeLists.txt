@@ -1,0 +1,2 @@
+add_executable(reverse_integer_test reverse_integer_test.cpp)
+target_link_libraries(reverse_integer_test GTest::GTest glog)

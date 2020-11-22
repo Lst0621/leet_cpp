@@ -1,0 +1,2 @@
+add_executable(palindrome_number_test palindrome_number_test.cpp)
+target_link_libraries(palindrome_number_test GTest::GTest glog)
