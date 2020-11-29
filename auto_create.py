@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import os
+import sys
 
 cmake_lists_fn = "CMakeLists.txt"
 solution_fn = "{}_solution.h"
@@ -131,8 +132,18 @@ class SolutionWriter(FileWriter):
 
 
 def main():
-    question_id = "9"
-    question_name = ["Palindrome", "Number"]
+    question_id = sys.argv[1]
+    # 1. or 1 both work
+    if question_id.endswith('.'):
+        question_id = question_id[:-1]
+
+    question_name = sys.argv[2:]
+    for i, s in enumerate(question_name):
+        if s[0].islower():
+            char_list = list(s)
+            char_list[0] =char_list[0].upper()
+            question_name[i] = "".join(char_list)
+
     lower_name = "_".join(question_name).lower()
     upper_name = "".join(question_name)
 
