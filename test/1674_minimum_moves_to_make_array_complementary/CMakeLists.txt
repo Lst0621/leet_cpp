@@ -1,0 +1,2 @@
+add_executable(minimum_moves_to_make_array_complementary_test minimum_moves_to_make_array_complementary_test.cpp)
+target_link_libraries(minimum_moves_to_make_array_complementary_test GTest::GTest glog)
