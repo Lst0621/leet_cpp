@@ -1,0 +1,2 @@
+add_executable(insert_interval_test insert_interval_test.cpp)
+target_link_libraries(insert_interval_test GTest::GTest glog)
