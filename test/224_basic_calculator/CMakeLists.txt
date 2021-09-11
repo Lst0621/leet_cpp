@@ -1,0 +1,2 @@
+add_executable(basic_calculator_test basic_calculator_test.cpp)
+target_link_libraries(basic_calculator_test GTest::GTest glog)
