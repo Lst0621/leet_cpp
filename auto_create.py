@@ -43,6 +43,7 @@ class Solution {
 }  // namespace lst
 """
 
+
 class FileWriter(ABC):
     def __init__(self, question_id, name):
         self.question_id_ = question_id
@@ -61,7 +62,6 @@ class FileWriter(ABC):
         pass
 
     def write_file(self):
-
         dir_name = self.get_dir()
         if not os.path.exists(dir_name):
             os.mkdir(dir_name)
@@ -97,9 +97,14 @@ class CMakeFileWriter(FileWriter):
     def get_dir(self):
         return self.get_test_dir()
 
+    def write_file(self):
+        FileWriter.write_file(self)
+        cmake_list_test_fn = os.path.join(project_root, "test", cmake_lists_fn)
+        with open(cmake_list_test_fn, 'a') as fd:
+            fd.write('add_subdirectory({})\n'.format("{}_{}".format(self.question_id_, self.name_)))
+
 
 class TestWriter(FileWriter):
-
 
     def __init__(self, question_id, name, upper_name):
         super().__init__(question_id, name)
@@ -116,7 +121,6 @@ class TestWriter(FileWriter):
 
 
 class SolutionWriter(FileWriter):
-
 
     def __init__(self, question_id, name):
         super().__init__(question_id, name)
