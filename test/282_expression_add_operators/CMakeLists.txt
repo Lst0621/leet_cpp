@@ -1,0 +1,2 @@
+add_executable(expression_add_operators_test expression_add_operators_test.cpp)
+target_link_libraries(expression_add_operators_test GTest::GTest glog)
