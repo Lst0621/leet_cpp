@@ -12,8 +12,6 @@ class Solution {
             diff.push_back(gas[i] - cost[i] +
                            (diff.empty() ? long(0) : diff.back()));
         }
-        auto d = diff;
-        reverse(d.begin(), d.end());
         if (diff.back() < 0) {
             return -1;
         }
