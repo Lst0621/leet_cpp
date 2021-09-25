@@ -1,0 +1,2 @@
+add_executable(gas_station_test gas_station_test.cpp)
+target_link_libraries(gas_station_test GTest::GTest glog)
