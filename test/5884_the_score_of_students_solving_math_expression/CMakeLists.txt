@@ -1,0 +1,2 @@
+add_executable(the_score_of_students_solving_math_expression_test the_score_of_students_solving_math_expression_test.cpp)
+target_link_libraries(the_score_of_students_solving_math_expression_test GTest::GTest glog)
