@@ -1,0 +1,2 @@
+add_executable(transform_to_chessboard_test transform_to_chessboard_test.cpp)
+target_link_libraries(transform_to_chessboard_test GTest::GTest glog)
