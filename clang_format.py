@@ -1,5 +1,5 @@
 import os
-import tqdm
+from multiprocessing.pool import Pool
 
 
 def get_suffix_to_format():
@@ -27,14 +27,18 @@ def main():
         return False
 
     files_to_format = list(filter(check_file_suffix, all_files))
-    for file_name in tqdm.tqdm(files_to_format):
-        cmd = "clang-format --style=file -i {}".format(file_name)
-        os.system(cmd)
 
-    print("Formatting done:")
+    num_process = 6
+    with Pool(num_process) as p:
+        p.map(format_file, files_to_format)
 
-    for file_name in files_to_format:
-        print("Formatting: {}".format(file_name))
+    print("done!")
+
+
+def format_file(file_name):
+    print("Formatting {}: {}".format(os.getpid(), file_name))
+    cmd = "clang-format --style=file -i {}".format(file_name)
+    os.system(cmd)
 
 
 if __name__ == '__main__':
