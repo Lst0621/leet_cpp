@@ -1,0 +1,2 @@
+add_executable(smallest_k-length_subsequence_with_occurrences_of_a_letter_test smallest_k-length_subsequence_with_occurrences_of_a_letter_test.cpp)
+target_link_libraries(smallest_k-length_subsequence_with_occurrences_of_a_letter_test GTest::GTest glog)
