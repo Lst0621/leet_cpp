@@ -1,0 +1,2 @@
+add_executable(find_all_duplicates_in_an_array_test find_all_duplicates_in_an_array_test.cpp)
+target_link_libraries(find_all_duplicates_in_an_array_test GTest::GTest glog)
