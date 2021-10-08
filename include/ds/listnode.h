@@ -10,7 +10,7 @@ struct ListNode {
     }
     static ListNode* get_list_node(int x) {
         ListNode* const ret = new ListNode(x);
-        Pool<ListNode>::add(ret);
+        add_pt_to_record(ret);
         return ret;
     }
     static ListNode* vector_to_list_node(const vector<int>& nodes) {

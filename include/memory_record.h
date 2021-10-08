@@ -4,34 +4,40 @@
 
 namespace lst {
 namespace leet {
-
 template <class T>
-class Pool {
+class MemoryRecord {
    private:
-    static Pool<T> INSTANCE;
+    static MemoryRecord<T> INSTANCE;
     vector<T*> vec;
 
    public:
-    static void add(T* ptr);
+    void add_pt(T* pt) {
+        vec.push_back(pt);
+    }
+
+    static MemoryRecord& get() {
+        return INSTANCE;
+    }
 
    private:
-    Pool<T>() {
+    MemoryRecord<T>() {
         LOG(INFO) << "Hello " << sizeof(T);
     };
-    ~Pool<T>() {
+
+    ~MemoryRecord<T>() {
         for (T* ptr : vec) {
             delete ptr;
         }
-        LOG(INFO) << "Goodbye " << sizeof(T);
+        LOG(INFO) << "Goodbye " << sizeof(T)<< ". pt count "<<vec.size();
     }
 };
 
 template <class T>
-Pool<T> Pool<T>::INSTANCE = Pool<T>();
+MemoryRecord<T> MemoryRecord<T>::INSTANCE = MemoryRecord<T>();
 
 template <class T>
-void Pool<T>::add(T* ptr) {
-    INSTANCE.vec.push_back(ptr);
+void add_pt_to_record(T* ptr) {
+    MemoryRecord<T>::get().add_pt(ptr);
 }
 
 }  // namespace leet
