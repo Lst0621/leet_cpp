@@ -28,7 +28,7 @@ class MemoryRecord {
         for (T* ptr : vec) {
             delete ptr;
         }
-        LOG(INFO) << "Goodbye " << sizeof(T)<< ". pt count "<<vec.size();
+        LOG(INFO) << "Goodbye " << sizeof(T) << ". pt count " << vec.size();
     }
 };
 
