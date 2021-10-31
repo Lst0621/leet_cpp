@@ -14,13 +14,13 @@ target_link_libraries({}_test GTest::GTest glog)"""
 
 test_template = """\
 #include <glog/logging.h>
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 #include "{}_{}/{}_solution.h"
 
 using namespace lst::leet;
 
-TEST({}Test, LeetTest) {{
+TEST({}Test, LeetTest1) {{
     Solution s;
 }}
 
