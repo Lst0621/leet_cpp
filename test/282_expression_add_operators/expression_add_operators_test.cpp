@@ -1,7 +1,7 @@
 #include <glog/logging.h>
+#include <gtest/gtest.h>
 
 #include "282_expression_add_operators/expression_add_operators_solution.h"
-#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

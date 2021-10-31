@@ -1,7 +1,7 @@
 #include <glog/logging.h>
+#include <gtest/gtest.h>
 
 #include "224_basic_calculator/basic_calculator_solution.h"
-#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

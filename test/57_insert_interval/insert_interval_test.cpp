@@ -1,7 +1,7 @@
 #include <glog/logging.h>
+#include <gtest/gtest.h>
 
 #include "57_insert_interval/insert_interval_solution.h"
-#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

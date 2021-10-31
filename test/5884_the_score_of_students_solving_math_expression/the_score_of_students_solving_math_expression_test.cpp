@@ -1,7 +1,7 @@
 #include <glog/logging.h>
+#include <gtest/gtest.h>
 
 #include "5884_the_score_of_students_solving_math_expression/the_score_of_students_solving_math_expression_solution.h"
-#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

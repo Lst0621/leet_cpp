@@ -1,7 +1,7 @@
 #include <glog/logging.h>
+#include <gtest/gtest.h>
 
 #include "442_find_all_duplicates_in_an_array/find_all_duplicates_in_an_array_solution.h"
-#include "gtest/gtest.h"
 
 using namespace lst::leet;
 
