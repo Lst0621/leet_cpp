@@ -28,8 +28,9 @@ class Solution {
             return false;
         }
 
-        if (dp[len1][len2][offset + SHIFT] != UNKNOWN) {
-            return dp[len1][len2][offset + SHIFT];
+        int& ans = dp[len1][len2][offset + SHIFT];
+        if (ans != UNKNOWN) {
+            return ans;
         }
         LOG(INFO) << "[" << s1.substr(0, len1) << "] [" << s2.substr(0, len2)
                   << "] " << offset << endl;
@@ -40,9 +41,8 @@ class Solution {
             }
             int idx = len1 - 1;
             if (isalpha(s1[idx])) {
-                dp[len1][len2][offset + SHIFT] =
-                    can_match(s1, s2, dp, len1 - 1, len2, offset - 1);
-                return dp[len1][len2][offset + SHIFT];
+                ans = can_match(s1, s2, dp, len1 - 1, len2, offset - 1);
+                return ans;
             }
             int num = 0;
             int weight = 1;
@@ -52,13 +52,13 @@ class Solution {
                 weight *= 10;
                 idx--;
                 if (can_match(s1, s2, dp, len1 - width, len2, offset - num)) {
-                    dp[len1][len2][offset + SHIFT] = MATCH;
-                    return dp[len1][len2][offset + SHIFT];
+                    ans = MATCH;
+                    return ans;
                 }
                 width++;
             }
-            dp[len1][len2][offset + SHIFT] = NOT_MATCH;
-            return dp[len1][len2][offset + SHIFT];
+            ans = NOT_MATCH;
+            return ans;
         }
 
         if (offset < 0) {
@@ -67,9 +67,8 @@ class Solution {
             }
             int idx = len2 - 1;
             if (isalpha(s2[idx])) {
-                dp[len1][len2][offset + SHIFT] =
-                    can_match(s1, s2, dp, len1, len2 - 1, offset + 1);
-                return dp[len1][len2][offset + SHIFT];
+                ans = can_match(s1, s2, dp, len1, len2 - 1, offset + 1);
+                return ans;
             }
             int num = 0;
             int weight = 1;
@@ -79,13 +78,13 @@ class Solution {
                 weight *= 10;
                 idx--;
                 if (can_match(s1, s2, dp, len1, len2 - width, offset + num)) {
-                    dp[len1][len2][offset + SHIFT] = MATCH;
-                    return dp[len1][len2][offset + SHIFT];
+                    ans = MATCH;
+                    return ans;
                 }
                 width++;
             }
-            dp[len1][len2][offset + SHIFT] = NOT_MATCH;
-            return dp[len1][len2][offset + SHIFT];
+            ans = NOT_MATCH;
+            return ans;
         }
         if (len1 == 0 || len2 == 0) {
             return false;
@@ -93,9 +92,8 @@ class Solution {
         char c1 = s1[len1 - 1];
         char c2 = s2[len2 - 1];
         if (isalpha(c1) && isalpha(c2)) {
-            dp[len1][len2][offset + SHIFT] =
-                c1 == c2 && can_match(s1, s2, dp, len1 - 1, len2 - 1);
-            return dp[len1][len2][offset + SHIFT];
+            ans = c1 == c2 && can_match(s1, s2, dp, len1 - 1, len2 - 1);
+            return ans;
         }
 
         // c1 alpha c2 number
@@ -104,14 +102,14 @@ class Solution {
             int weight = 1;
             for (int i = 1; i <= 3; i++) {
                 if (len2 - i < 0 || isalpha(s2[len2 - i])) {
-                    dp[len1][len2][offset + SHIFT] = NOT_MATCH;
-                    return dp[len1][len2][offset + SHIFT];
+                    ans = NOT_MATCH;
+                    return ans;
                 }
                 number += (s2[len2 - i] - '0') * weight;
                 weight *= 10;
                 if (can_match(s1, s2, dp, len1 - 1, len2 - i, number - 1)) {
-                    dp[len1][len2][offset + SHIFT] = MATCH;
-                    return dp[len1][len2][offset + SHIFT];
+                    ans = MATCH;
+                    return ans;
                 }
             }
         }
@@ -122,14 +120,14 @@ class Solution {
             int weight = 1;
             for (int i = 1; i <= 3; i++) {
                 if (len1 - i < 0 || isalpha(s1[len1 - i])) {
-                    dp[len1][len2][offset + SHIFT] = NOT_MATCH;
-                    return dp[len1][len2][offset + SHIFT];
+                    ans = NOT_MATCH;
+                    return ans;
                 }
                 number += (s1[len1 - i] - '0') * weight;
                 weight *= 10;
                 if (can_match(s1, s2, dp, len1 - i, len2 - 1, 1 - number)) {
-                    dp[len1][len2][offset + SHIFT] = MATCH;
-                    return dp[len1][len2][offset + SHIFT];
+                    ans = MATCH;
+                    return ans;
                 }
             }
         }
@@ -139,8 +137,8 @@ class Solution {
         int weight1 = 1;
         for (int i = 1; i <= 3; i++) {
             if (len1 - i < 0 || isalpha(s1[len1 - i])) {
-                dp[len1][len2][offset + SHIFT] = NOT_MATCH;
-                return dp[len1][len2][offset + SHIFT];
+                ans = NOT_MATCH;
+                return ans;
             }
             number1 += (s1[len1 - i] - '0') * weight1;
             weight1 *= 10;
@@ -154,13 +152,13 @@ class Solution {
                 weight2 *= 10;
                 if (can_match(s1, s2, dp, len1 - i, len2 - j,
                               number2 - number1)) {
-                    dp[len1][len2][offset + SHIFT] = MATCH;
-                    return dp[len1][len2][offset + SHIFT];
+                    ans = MATCH;
+                    return ans;
                 }
             }
         }
-        dp[len1][len2][offset + SHIFT] = NOT_MATCH;
-        return dp[len1][len2][offset + SHIFT];
+        ans = NOT_MATCH;
+        return ans;
     }
 };
 }  // namespace leet
