@@ -1,7 +1,7 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "5893_smallest_k-length_subsequence_with_occurrences_of_a_letter/smallest_k-length_subsequence_with_occurrences_of_a_letter_solution.h"
+#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

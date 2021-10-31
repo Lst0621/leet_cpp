@@ -1,7 +1,7 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "1_two_sum/two_sum_solution.h"
+#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

@@ -1,8 +1,8 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "142_linked_list_cycle_ii/linked_list_cycle_ii_solution.h"
 #include "ds/listnode.h"
+#include "gtest/gtest.h"
 #include "memory_record.h"
 
 using namespace lst::leet;

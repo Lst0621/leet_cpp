@@ -1,7 +1,7 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "9_palindrome_number/palindrome_number_solution.h"
+#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

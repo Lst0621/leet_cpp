@@ -1,7 +1,7 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "134_gas_station/gas_station_solution.h"
+#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

@@ -1,7 +1,7 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "7_reverse_integer/reverse_integer_solution.h"
+#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

@@ -1,7 +1,7 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "2035_partition_array_into_two_arrays_to_minimize_sum_difference/partition_array_into_two_arrays_to_minimize_sum_difference_solution.h"
+#include "gtest/gtest.h"
 
 using namespace lst::leet;
 

@@ -1,7 +1,7 @@
 #include <glog/logging.h>
-#include "gtest/gtest.h"
 
 #include "782_transform_to_chessboard/transform_to_chessboard_solution.h"
+#include "gtest/gtest.h"
 
 using namespace lst::leet;
 
