@@ -1,0 +1,2 @@
+add_executable(largest_component_size_by_common_factor_test largest_component_size_by_common_factor_test.cpp)
+target_link_libraries(largest_component_size_by_common_factor_test GTest::GTest glog)
