@@ -70,6 +70,7 @@ class FileWriter(ABC):
         content = self.get_file_content()
         if os.path.exists(fn):
             print("{} exists!".format(fn))
+            return
 
         with open(fn, 'w') as fd:
             fd.write(content)
