@@ -9,6 +9,7 @@ TEST(CountArrayPairsDivisibleByKTest, LeetTest1) {
     Solution s;
     EXPECT_EQ(6, s.countPairs({5, 10, 4, 5, 8, 3}, 8));
 }
+
 TEST(CountArrayPairsDivisibleByKTest, LeetTest2) {
     Solution s;
     EXPECT_EQ(7, s.countPairs({1, 2, 3, 4, 5}, 2));

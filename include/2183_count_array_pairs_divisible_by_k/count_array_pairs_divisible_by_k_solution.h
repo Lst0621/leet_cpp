@@ -26,7 +26,7 @@ class Solution {
             }
 
             // smallest num2 so that num1 * num2 % k == 0, when num1 is fixed
-            const long long num2_min = k / gcd(num1, (long long)(k));
+            const long long num2_min = lcm(num1, (long long)(k)) / num1;
             for (long long num2 = num2_min; num2 < k; num2 += num2_min) {
                 if (num2 < num1) {
                     continue;
