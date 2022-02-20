@@ -1,0 +1,2 @@
+add_executable(count_array_pairs_divisible_by_k_test count_array_pairs_divisible_by_k_test.cpp)
+target_link_libraries(count_array_pairs_divisible_by_k_test GTest::GTest glog)
