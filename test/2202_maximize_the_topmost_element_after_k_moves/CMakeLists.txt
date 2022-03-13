@@ -1,0 +1,2 @@
+add_executable(maximize_the_topmost_element_after_k_moves_test maximize_the_topmost_element_after_k_moves_test.cpp)
+target_link_libraries(maximize_the_topmost_element_after_k_moves_test GTest::GTest glog)
